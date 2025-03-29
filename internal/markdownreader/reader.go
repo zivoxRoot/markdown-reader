@@ -18,19 +18,21 @@ func NewReader(file string) *Reader {
 	return &reader
 }
 
-func (reader *Reader) ProcessMarkdown() (string, error) {
+func (reader *Reader) ProcessMarkdown() ([]string, error) {
 
 	// Check that the Reader has a valid File field
 	trimedFileName := strings.Trim(reader.File, " ")
 	if trimedFileName == "" {
-		return "", fmt.Errorf("the markdown reader needs a file property")
+		return nil, fmt.Errorf("the markdown reader needs a file property")
 	}
 
 	// Read the file
 	content, err := ioutil.ReadFile(reader.File)
 	if err != nil {
-		return "", fmt.Errorf("error reading file %v : %v", reader.File, err)
+		return nil, fmt.Errorf("error reading file %v : %v", reader.File, err)
 	}
 
-	return string(content), nil
+	lines := strings.Split(string(content), "\n")
+
+	return lines, nil
 }
