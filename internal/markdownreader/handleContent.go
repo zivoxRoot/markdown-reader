@@ -101,6 +101,35 @@ func handleContent(line string) string {
 			continue
 		}
 
+		/// Inline code ///
+
+		// Check for inline code start
+		if strings.HasPrefix(word, "`") {
+			word = strings.TrimPrefix(word, "`") // Remove the ` prefix
+
+			// Check if the word also end the inline code
+			if strings.HasSuffix(word, "`") {
+				word = strings.TrimSuffix(word, "`") // Remove the ` suffix
+
+				word = colors.BgBlack() + " " + colors.Red() + word + " " + colors.Reset()
+				returnSlice = append(returnSlice, word)
+				continue
+			}
+
+			word = colors.BgBlack() + " " + colors.Red() + word
+			returnSlice = append(returnSlice, word)
+			continue
+		}
+
+		// Check for inline code stop
+		if strings.HasSuffix(word, "`") {
+			word = strings.TrimSuffix(word, "`") // Remove the ` suffix
+
+			word = word + " " + colors.Reset()
+			returnSlice = append(returnSlice, word)
+			continue
+		}
+
 		// Add the word to the return slice
 		returnSlice = append(returnSlice, word)
 	}
