@@ -9,12 +9,12 @@ type Colorer struct {
 }
 
 func NewColorer() *Colorer {
-	colorizer := Colorer{}
+	colorer := Colorer{}
 
 	colorSupport := getColorSupport()
-	colorizer.ColorMode = colorSupport
+	colorer.ColorMode = colorSupport
 
-	return &colorizer
+	return &colorer
 }
 
 func getColorSupport() string {
