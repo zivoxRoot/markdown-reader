@@ -9,10 +9,10 @@ import (
 
 func handleNumberedList(line string) string {
 	// Check if the fist word ends with a dot
-	cleanLine := strings.TrimPrefix(line, " ")
-	splittedLine := strings.Split(cleanLine, " ")
-	firstWord := splittedLine[0]
-	restOfLine := strings.TrimPrefix(cleanLine, firstWord)
+	line = strings.TrimPrefix(line, " ")
+	words := strings.Split(line, " ")
+	firstWord := words[0]
+	restOfLine := strings.TrimPrefix(line, firstWord)
 
 	if strings.HasSuffix(firstWord, ".") {
 		cleanFirstWord := strings.TrimSuffix(firstWord, ".")
