@@ -14,7 +14,7 @@ func handleContent(line string) string {
 	// Loop through words and check if they have special chars
 	for _, word := range words {
 
-		// Start bold
+		// Check for bold start
 		if strings.HasPrefix(word, "**") {
 			word = strings.TrimPrefix(word, "**") // Remove the ** prefix
 
@@ -33,9 +33,37 @@ func handleContent(line string) string {
 			continue
 		}
 
-		// Stop the bold
+		// Check for bold stop
 		if strings.HasSuffix(word, "**") {
 			word = strings.TrimSuffix(word, "**") // Remove the ** suffix
+
+			returnSlice = append(returnSlice, word)
+			returnSlice = append(returnSlice, colors.Reset())
+			continue
+		}
+
+		// Check for italic start
+		if strings.HasPrefix(word, "*") {
+			word = strings.TrimPrefix(word, "*") // Remove the * prefix
+
+			// Check if the word also end the italic
+			if strings.HasSuffix(word, "*") {
+				word = strings.TrimSuffix(word, "*") // Remove the * suffix
+
+				returnSlice = append(returnSlice, colors.Italic())
+				returnSlice = append(returnSlice, word)
+				returnSlice = append(returnSlice, colors.Reset())
+				continue
+			}
+
+			returnSlice = append(returnSlice, colors.Italic())
+			returnSlice = append(returnSlice, word)
+			continue
+		}
+
+		// Check for italic stop
+		if strings.HasSuffix(word, "*") {
+			word = strings.TrimSuffix(word, "*") // Remove the * suffix
 
 			returnSlice = append(returnSlice, word)
 			returnSlice = append(returnSlice, colors.Reset())
