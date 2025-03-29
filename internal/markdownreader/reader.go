@@ -20,7 +20,7 @@ func NewReader(file string) *Reader {
 
 func (reader *Reader) ProcessMarkdown() ([]string, error) {
 
-	// Check that the Reader has a valid File field
+	// Check that the Reader has a valid File property
 	trimedFileName := strings.Trim(reader.File, " ")
 	if trimedFileName == "" {
 		return nil, fmt.Errorf("the markdown reader needs a file property")
@@ -32,7 +32,7 @@ func (reader *Reader) ProcessMarkdown() ([]string, error) {
 		return nil, fmt.Errorf("error reading file %v : %v", reader.File, err)
 	}
 
-	// Convert the file to a slice
+	// Convert the file's content to a slice
 	lines := strings.Split(string(content), "\n")
 	
 	var returnValue []string

@@ -6,31 +6,61 @@ import (
 
 func handlePrefix(line string) string {
 
-	// TODO: Convert to switch case
-
 	// Handle title 3
 	if strings.HasPrefix(line, "###") {
-		myLine := "TITLE 3 : " + line
-		return myLine
+		returnLine := handleTitle3(line)
+		return returnLine
 	}
 
 	// Handle title 2
 	if strings.HasPrefix(line, "##") {
-		myLine := "TITLE 2 : " + line
-		return myLine
+		returnLine := handleTitle2(line)
+		return returnLine
 	}
 
 	// Handle title 1
 	if strings.HasPrefix(line, "#") {
-		myLine := "TITLE 1 : " + line
-		return myLine
+		returnLine := handleTitle1(line)
+		return returnLine
 	}
 
 	// Handle bullet list
-	if strings.HasPrefix(line, "-") {
-		myLine := "BULLET POINT : " + line
-		return myLine
+	if strings.HasPrefix(line, "-") || strings.HasPrefix(line, "+") || strings.HasPrefix(line, "*") {
+		returnLine := handleBulletList(line)
+		return returnLine
 	}
 
 	return line
+}
+
+func handleTitle1(line string) string {
+	returnLine := "TITLE 1 : " + line
+	return returnLine
+}
+
+func handleTitle2(line string) string {
+	returnLine := "TITLE 2 : " + line
+	return returnLine
+}
+
+func handleTitle3(line string) string {
+	returnLine := "TITLE 3 : " + line
+	return returnLine
+}
+
+func handleBulletList(line string) string {
+	var returnLine string
+
+	if strings.HasPrefix(line, "-") {
+		returnLine = strings.TrimPrefix(line, "-")
+	}
+	if strings.HasPrefix(line, "+") {
+		returnLine = strings.TrimPrefix(line, "+")
+	}
+	if strings.HasPrefix(line, "*") {
+		returnLine = strings.TrimPrefix(line, "*")
+	}
+
+	returnLine = "•" + returnLine
+	return returnLine
 }
