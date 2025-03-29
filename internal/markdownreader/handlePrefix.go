@@ -8,9 +8,9 @@ import (
 
 func handlePrefix(line string) string {
 
-	// Handle title 3
-	if strings.HasPrefix(line, "### ") {
-		returnLine := handleTitle3(line)
+	// Handle title 1
+	if strings.HasPrefix(line, "# ") {
+		returnLine := handleTitle1(line)
 		return returnLine
 	}
 
@@ -20,9 +20,9 @@ func handlePrefix(line string) string {
 		return returnLine
 	}
 
-	// Handle title 1
-	if strings.HasPrefix(line, "# ") {
-		returnLine := handleTitle1(line)
+	// Handle title 3
+	if strings.HasPrefix(line, "### ") {
+		returnLine := handleTitle3(line)
 		return returnLine
 	}
 
