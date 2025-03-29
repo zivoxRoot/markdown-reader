@@ -2,8 +2,8 @@ package markdownreader
 
 import (
 	"fmt"
-	"strings"
 	"io/ioutil"
+	"strings"
 )
 
 type Reader struct {
@@ -34,12 +34,13 @@ func (reader *Reader) ProcessMarkdown() ([]string, error) {
 
 	// Convert the file's content to a slice
 	lines := strings.Split(string(content), "\n")
-	
-	// Start the return with a newline
+
 	var returnValue []string
+	// Start the return with a newline
 	returnValue = append(returnValue, "\n")
 
-	for _, line := range(lines) {
+	// Check the prefix of each line
+	for _, line := range lines {
 		line := handlePrefix(line)
 		returnValue = append(returnValue, line)
 	}

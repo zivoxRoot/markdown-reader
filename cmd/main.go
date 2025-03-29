@@ -19,7 +19,7 @@ func main() {
 	}
 
 	// Print the stylized markdown
-	for _, line := range(result) {
+	for _, line := range result {
 		fmt.Println("  " + line)
 	}
 }

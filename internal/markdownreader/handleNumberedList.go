@@ -1,8 +1,8 @@
 package markdownreader
 
 import (
-	"strings"
 	"strconv"
+	"strings"
 
 	"github.com/zivoxRoot/markdown-reader/internal/colors"
 )
