@@ -30,5 +30,11 @@ func handlePrefix(line string) string {
 		return returnLine
 	}
 
+	// Handle quotes
+	if strings.HasPrefix(line, "> ") {
+		returnLine := handleQuotes(line)
+		return returnLine
+	}
+
 	return line
 }
