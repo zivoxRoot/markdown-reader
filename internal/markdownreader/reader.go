@@ -36,12 +36,18 @@ func (reader *Reader) ProcessMarkdown() ([]string, error) {
 	lines := strings.Split(string(content), "\n")
 
 	var returnValue []string
+
 	// Start the return with a newline
 	returnValue = append(returnValue, "\n")
 
-	// Check the prefix of each line
 	for _, line := range lines {
+
+		// Check the prefix of each line for title, bullet list...
 		line := handlePrefix(line)
+
+		// Check the content of each line for bold, italic...
+		line = handleContent(line)
+
 		returnValue = append(returnValue, line)
 	}
 
