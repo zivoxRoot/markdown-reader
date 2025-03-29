@@ -4,16 +4,17 @@ set -e  # Exit on error
 
 # Define variables
 APP_NAME="md"
-INSTALL_DIR_LINUX="/usr/local/bin"
+INSTALL_DIR="/usr/local/bin"
 GITHUB_REPO="zivoxRoot/markdown-reader"
-LATEST_RELEASE_URL="https://github.com/$GITHUB_REPO/releases/latest/download/$APP_NAME"
+LATEST_RELEASE="0.0.0"
+DOWNLOAD_URL="https://github.com/$GITHUB_REPO/releases/download/$LATEST_RELEASE/$APP_NAME"
 
 # Download and install the executable
 echo "Downloading $APP_NAME..."
-curl -L -o "$INSTALL_DIR/$APP_NAME" "$LATEST_RELEASE_URL"
+sudo curl -L -o "$INSTALL_DIR/$APP_NAME" "$DOWNLOAD_URL"
 
 # Set permissions
-chmod +x "$INSTALL_DIR/$APP_NAME"
+sudo chmod +x "$INSTALL_DIR/$APP_NAME"
 
 # Ensure the directory is in PATH
 if [[ ":$PATH:" != *":$INSTALL_DIR:"* ]]; then
