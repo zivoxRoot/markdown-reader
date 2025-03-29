@@ -24,12 +24,12 @@ func handleContent(line string) string {
 			if strings.HasSuffix(word, "**") {
 				word = strings.TrimSuffix(word, "**") // Remove the ** suffix
 
-				word = colors.Blue() + word + colors.Reset()
+				word = colors.Bold() + word + colors.Reset()
 				returnSlice = append(returnSlice, word)
 				continue
 			}
 
-			word = colors.Blue() + word
+			word = colors.Bold() + word
 			returnSlice = append(returnSlice, word)
 			continue
 		}
