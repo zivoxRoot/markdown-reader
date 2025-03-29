@@ -2,6 +2,8 @@ package markdownreader
 
 import (
 	"strings"
+
+	"github.com/zivoxRoot/markdown-reader/internal/colors"
 )
 
 func handlePrefix(line string) string {
@@ -37,22 +39,21 @@ func handleTitle1(line string) string {
 	var returnLine string
 
 	returnLine = strings.TrimPrefix(line, "# ")
-	// returnLine = "\033[38;5;69m" + returnLine + "\033[0m"
-	returnLine = "\033[1;38;5;69m" + returnLine + "\033[0m"
+	returnLine = colors.BrightBgBlue() + colors.Bold() + " " + returnLine + " " + colors.Reset() + "\n"
 	return returnLine
 }
 
 func handleTitle2(line string) string {
 	var returnLine string
 
-	returnLine = "TITLE 2 : " + line
+	returnLine = colors.BrightCyan() + line + colors.Reset()
 	return returnLine
 }
 
 func handleTitle3(line string) string {
 	var returnLine string
 
-	returnLine = "TITLE 3 : " + line
+	returnLine = colors.BrightCyan() + line + colors.Reset()
 	return returnLine
 }
 

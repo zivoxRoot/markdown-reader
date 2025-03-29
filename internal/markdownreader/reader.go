@@ -35,7 +35,9 @@ func (reader *Reader) ProcessMarkdown() ([]string, error) {
 	// Convert the file's content to a slice
 	lines := strings.Split(string(content), "\n")
 	
+	// Start the return with a newline
 	var returnValue []string
+	returnValue = append(returnValue, "\n")
 
 	for _, line := range(lines) {
 		line := handlePrefix(line)
