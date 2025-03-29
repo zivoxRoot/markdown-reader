@@ -29,7 +29,7 @@ func (reader *Reader) ProcessMarkdown() ([]string, error) {
 	// Read the file
 	content, err := ioutil.ReadFile(reader.File)
 	if err != nil {
-		return nil, fmt.Errorf("error reading file %v : %v", reader.File, err)
+		return nil, err
 	}
 
 	// Convert the file's content to a slice
