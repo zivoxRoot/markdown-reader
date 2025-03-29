@@ -20,6 +20,6 @@ func main() {
 
 	// Print the stylized markdown
 	for _, line := range(result) {
-		fmt.Println(line)
+		fmt.Println("  " + line)
 	}
 }
