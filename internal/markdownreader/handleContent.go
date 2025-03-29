@@ -22,12 +22,12 @@ func handleContent(line string) string {
 			if strings.HasSuffix(word, "**") {
 				word = strings.TrimSuffix(word, "**") // Remove the ** suffix
 
-				word = colorer.Bold() + word + colorer.Reset()
+				word = colors.Bold() + word + colors.Reset()
 				returnSlice = append(returnSlice, word)
 				continue
 			}
 
-			word = colorer.Bold() + word
+			word = colors.Bold() + word
 			returnSlice = append(returnSlice, word)
 			continue
 		}
@@ -36,7 +36,7 @@ func handleContent(line string) string {
 		if strings.HasSuffix(word, "**") {
 			word = strings.TrimSuffix(word, "**") // Remove the ** suffix
 
-			word = word + colorer.Reset()
+			word = word + colors.Reset()
 			returnSlice = append(returnSlice, word)
 			continue
 		}
@@ -51,12 +51,12 @@ func handleContent(line string) string {
 			if strings.HasSuffix(word, "*") {
 				word = strings.TrimSuffix(word, "*") // Remove the * suffix
 
-				word = colorer.Italic() + word + colorer.Reset()
+				word = colors.Italic() + word + colors.Reset()
 				returnSlice = append(returnSlice, word)
 				continue
 			}
 
-			word = colorer.Italic() + word
+			word = colors.Italic() + word
 			returnSlice = append(returnSlice, word)
 			continue
 		}
@@ -65,7 +65,7 @@ func handleContent(line string) string {
 		if strings.HasSuffix(word, "*") {
 			word = strings.TrimSuffix(word, "*") // Remove the * suffix
 
-			word = word + colorer.Reset()
+			word = word + colors.Reset()
 			returnSlice = append(returnSlice, word)
 			continue
 		}
@@ -80,12 +80,12 @@ func handleContent(line string) string {
 			if strings.HasSuffix(word, "~") {
 				word = strings.TrimSuffix(word, "~") // Remove the ~ suffix
 
-				word = colorer.Strikethrough() + word + colorer.Reset()
+				word = colors.Strikethrough() + word + colors.Reset()
 				returnSlice = append(returnSlice, word)
 				continue
 			}
 
-			word = colorer.Strikethrough() + word
+			word = colors.Strikethrough() + word
 			returnSlice = append(returnSlice, word)
 			continue
 		}
@@ -94,7 +94,7 @@ func handleContent(line string) string {
 		if strings.HasSuffix(word, "~") {
 			word = strings.TrimSuffix(word, "~") // Remove the ~ suffix
 
-			word = word + colorer.Reset()
+			word = word + colors.Reset()
 			returnSlice = append(returnSlice, word)
 			continue
 		}
@@ -109,12 +109,12 @@ func handleContent(line string) string {
 			if strings.HasSuffix(word, "`") {
 				word = strings.TrimSuffix(word, "`") // Remove the ` suffix
 
-				word = colorer.BgBlack() + " " + colorer.Red() + word + " " + colorer.Reset()
+				word = colors.BgBlack() + " " + colors.Red() + word + " " + colors.Reset()
 				returnSlice = append(returnSlice, word)
 				continue
 			}
 
-			word = colorer.BgBlack() + " " + colorer.Red() + word
+			word = colors.BgBlack() + " " + colors.Red() + word
 			returnSlice = append(returnSlice, word)
 			continue
 		}
@@ -123,7 +123,7 @@ func handleContent(line string) string {
 		if strings.HasSuffix(word, "`") {
 			word = strings.TrimSuffix(word, "`") // Remove the ` suffix
 
-			word = word + " " + colorer.Reset()
+			word = word + " " + colors.Reset()
 			returnSlice = append(returnSlice, word)
 			continue
 		}

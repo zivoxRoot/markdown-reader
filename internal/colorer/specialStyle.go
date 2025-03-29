@@ -1,4 +1,4 @@
-package colors
+package colorer
 
 func (colorer *Colorer) Reset() string {
 	return "\033[0m"

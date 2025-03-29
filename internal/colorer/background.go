@@ -1,4 +1,4 @@
-package colors
+package colorer
 
 func (colorer *Colorer) BgBlack() string {
 	switch colorer.ColorMode {
