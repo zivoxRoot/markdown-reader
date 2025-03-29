@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"strings"
+
+	"github.com/zivoxRoot/markdown-reader/internal/colors"
 )
 
 type Reader struct {
@@ -17,6 +19,9 @@ func NewReader(file string) *Reader {
 
 	return &reader
 }
+
+// Initialize a new colorer
+var colorer = colors.NewColorer()
 
 func (reader *Reader) ProcessMarkdown() ([]string, error) {
 

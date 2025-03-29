@@ -111,12 +111,12 @@ func handleContent(line string) string {
 			if strings.HasSuffix(word, "`") {
 				word = strings.TrimSuffix(word, "`") // Remove the ` suffix
 
-				word = colors.BgBlack() + " " + colors.Red() + word + " " + colors.Reset()
+				word = colorer.BgBlack() + " " + colorer.Red() + word + " " + colors.Reset()
 				returnSlice = append(returnSlice, word)
 				continue
 			}
 
-			word = colors.BgBlack() + " " + colors.Red() + word
+			word = colorer.BgBlack() + " " + colorer.Red() + word
 			returnSlice = append(returnSlice, word)
 			continue
 		}

@@ -22,7 +22,7 @@ func handleNumberedList(line string) string {
 			return line
 		}
 
-		return colors.Cyan() + firstWord + colors.Reset() + restOfLine
+		return colorer.Cyan() + firstWord + colors.Reset() + restOfLine
 	}
 
 	return line
