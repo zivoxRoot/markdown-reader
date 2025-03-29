@@ -4,7 +4,7 @@ import (
 	"strings"
 )
 
-func handleContent(line string) string {
+func handleLine(line string) string {
 	line = strings.TrimPrefix(line, " ")
 	words := strings.Split(line, " ")
 	var returnSlice []string

@@ -51,7 +51,7 @@ func (reader *Reader) ProcessMarkdown() ([]string, error) {
 		line := handlePrefix(line)
 
 		// Check the content of each line for bold, italic...
-		line = handleContent(line)
+		line = handleLine(line)
 
 		returnValue = append(returnValue, line)
 	}
