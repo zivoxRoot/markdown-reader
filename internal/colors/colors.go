@@ -25,27 +25,27 @@ func getColorSupport() string {
 }
 
 // Special styles
-func Reset() string {
+func (colorer *Colorer) Reset() string {
 	return "\033[0m"
 }
 
-func Bold() string {
+func (colorer *Colorer) Bold() string {
 	return "\033[1m"
 }
 
-func Strikethrough() string {
+func (colorer *Colorer) Strikethrough() string {
 	return "\033[9m"
 }
 
-func Dim() string {
+func (colorer *Colorer) Dim() string {
 	return "\033[2m"
 }
 
-func Italic() string {
+func (colorer *Colorer) Italic() string {
 	return "\033[3m"
 }
 
-func Underline() string {
+func (colorer *Colorer) Underline() string {
 	return "\033[4m"
 }
 

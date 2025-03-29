@@ -2,8 +2,6 @@ package markdownreader
 
 import (
 	"strings"
-
-	"github.com/zivoxRoot/markdown-reader/internal/colors"
 )
 
 func handleContent(line string) string {
@@ -24,12 +22,12 @@ func handleContent(line string) string {
 			if strings.HasSuffix(word, "**") {
 				word = strings.TrimSuffix(word, "**") // Remove the ** suffix
 
-				word = colors.Bold() + word + colors.Reset()
+				word = colorer.Bold() + word + colorer.Reset()
 				returnSlice = append(returnSlice, word)
 				continue
 			}
 
-			word = colors.Bold() + word
+			word = colorer.Bold() + word
 			returnSlice = append(returnSlice, word)
 			continue
 		}
@@ -38,7 +36,7 @@ func handleContent(line string) string {
 		if strings.HasSuffix(word, "**") {
 			word = strings.TrimSuffix(word, "**") // Remove the ** suffix
 
-			word = word + colors.Reset()
+			word = word + colorer.Reset()
 			returnSlice = append(returnSlice, word)
 			continue
 		}
@@ -53,12 +51,12 @@ func handleContent(line string) string {
 			if strings.HasSuffix(word, "*") {
 				word = strings.TrimSuffix(word, "*") // Remove the * suffix
 
-				word = colors.Italic() + word + colors.Reset()
+				word = colorer.Italic() + word + colorer.Reset()
 				returnSlice = append(returnSlice, word)
 				continue
 			}
 
-			word = colors.Italic() +word
+			word = colorer.Italic() + word
 			returnSlice = append(returnSlice, word)
 			continue
 		}
@@ -67,7 +65,7 @@ func handleContent(line string) string {
 		if strings.HasSuffix(word, "*") {
 			word = strings.TrimSuffix(word, "*") // Remove the * suffix
 
-			word = word + colors.Reset()
+			word = word + colorer.Reset()
 			returnSlice = append(returnSlice, word)
 			continue
 		}
@@ -82,12 +80,12 @@ func handleContent(line string) string {
 			if strings.HasSuffix(word, "~") {
 				word = strings.TrimSuffix(word, "~") // Remove the ~ suffix
 
-				word = colors.Strikethrough() + word + colors.Reset()
+				word = colorer.Strikethrough() + word + colorer.Reset()
 				returnSlice = append(returnSlice, word)
 				continue
 			}
 
-			word = colors.Strikethrough() +word
+			word = colorer.Strikethrough() +word
 			returnSlice = append(returnSlice, word)
 			continue
 		}
@@ -96,7 +94,7 @@ func handleContent(line string) string {
 		if strings.HasSuffix(word, "~") {
 			word = strings.TrimSuffix(word, "~") // Remove the ~ suffix
 
-			word = word + colors.Reset()
+			word = word + colorer.Reset()
 			returnSlice = append(returnSlice, word)
 			continue
 		}
@@ -111,7 +109,7 @@ func handleContent(line string) string {
 			if strings.HasSuffix(word, "`") {
 				word = strings.TrimSuffix(word, "`") // Remove the ` suffix
 
-				word = colorer.BgBlack() + " " + colorer.Red() + word + " " + colors.Reset()
+				word = colorer.BgBlack() + " " + colorer.Red() + word + " " + colorer.Reset()
 				returnSlice = append(returnSlice, word)
 				continue
 			}
@@ -125,7 +123,7 @@ func handleContent(line string) string {
 		if strings.HasSuffix(word, "`") {
 			word = strings.TrimSuffix(word, "`") // Remove the ` suffix
 
-			word = word + " " + colors.Reset()
+			word = word + " " + colorer.Reset()
 			returnSlice = append(returnSlice, word)
 			continue
 		}
