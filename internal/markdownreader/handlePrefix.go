@@ -6,21 +6,15 @@ import (
 
 func handlePrefix(line string) string {
 
-	// Handle title 1
+	// Handle big title
 	if strings.HasPrefix(line, "# ") {
-		returnLine := handleTitle1(line)
+		returnLine := handleBigTitle(line)
 		return returnLine
 	}
 
-	// Handle title 2
-	if strings.HasPrefix(line, "## ") {
-		returnLine := handleTitle2(line)
-		return returnLine
-	}
-
-	// Handle title 3
-	if strings.HasPrefix(line, "### ") {
-		returnLine := handleTitle3(line)
+	// Handle other titles
+	if strings.HasPrefix(line, "## ") || strings.HasPrefix(line, "### ") || strings.HasPrefix(line, "#### ") || strings.HasPrefix(line, "##### ") || strings.HasPrefix(line, "###### ") {
+		returnLine := handleTitle(line)
 		return returnLine
 	}
 
