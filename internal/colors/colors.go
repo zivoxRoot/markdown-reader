@@ -4,8 +4,6 @@ import (
 	"os"
 )
 
-var ColorMode string
-
 type Colorer struct {
 	ColorMode string
 }
