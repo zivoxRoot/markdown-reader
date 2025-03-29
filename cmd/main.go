@@ -9,7 +9,7 @@ import (
 
 func main() {
 	// Initialize a new markdown reader instance
-	reader := markdownreader.NewReader("../myFile.txt")
+	reader := markdownreader.NewReader("../myFile.md")
 	result, err := reader.ProcessMarkdown()
 
 	// Check for errors
