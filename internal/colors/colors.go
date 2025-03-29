@@ -9,6 +9,10 @@ func Bold() string {
 	return "\033[1m"
 }
 
+func Strikethrough() string {
+	return "\033[9m"
+}
+
 func Dim() string {
 	return "\033[2m"
 }
