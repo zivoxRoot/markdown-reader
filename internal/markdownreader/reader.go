@@ -32,7 +32,15 @@ func (reader *Reader) ProcessMarkdown() ([]string, error) {
 		return nil, fmt.Errorf("error reading file %v : %v", reader.File, err)
 	}
 
+	// Convert the file to a slice
 	lines := strings.Split(string(content), "\n")
+	
+	var returnValue []string
 
-	return lines, nil
+	for _, line := range(lines) {
+		line := handlePrefix(line)
+		returnValue = append(returnValue, line)
+	}
+
+	return returnValue, nil
 }
