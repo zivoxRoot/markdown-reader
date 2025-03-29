@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/zivoxRoot/markdown-reader/internal/markdownreader"
 	"github.com/zivoxRoot/markdown-reader/internal/help"
+	"github.com/zivoxRoot/markdown-reader/internal/markdownreader"
 )
 
 func main() {

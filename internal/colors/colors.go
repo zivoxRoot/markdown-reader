@@ -9,7 +9,7 @@ type Colorer struct {
 }
 
 func NewColorer() *Colorer {
-	colorizer := Colorer {}
+	colorizer := Colorer{}
 
 	colorSupport := getColorSupport()
 	colorizer.ColorMode = colorSupport
@@ -48,7 +48,7 @@ func (colorer *Colorer) Underline() string {
 }
 
 // Foreground Colors
-func (colorer *Colorer) Black() (string) {
+func (colorer *Colorer) Black() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[38;2;0;0;0m"
@@ -59,7 +59,7 @@ func (colorer *Colorer) Black() (string) {
 	}
 }
 
-func (colorer *Colorer) Red() (string) {
+func (colorer *Colorer) Red() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[38;2;255;0;0m"
@@ -70,7 +70,7 @@ func (colorer *Colorer) Red() (string) {
 	}
 }
 
-func (colorer *Colorer) Green() (string) {
+func (colorer *Colorer) Green() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[38;2;0;255;0m"
@@ -81,7 +81,7 @@ func (colorer *Colorer) Green() (string) {
 	}
 }
 
-func (colorer *Colorer) Yellow() (string) {
+func (colorer *Colorer) Yellow() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[38;2;255;255;0m"
@@ -92,7 +92,7 @@ func (colorer *Colorer) Yellow() (string) {
 	}
 }
 
-func (colorer *Colorer) Blue() (string) {
+func (colorer *Colorer) Blue() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[38;2;0;0;255m"
@@ -103,7 +103,7 @@ func (colorer *Colorer) Blue() (string) {
 	}
 }
 
-func (colorer *Colorer) Magenta() (string) {
+func (colorer *Colorer) Magenta() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[38;2;255;0;255m"
@@ -114,7 +114,7 @@ func (colorer *Colorer) Magenta() (string) {
 	}
 }
 
-func (colorer *Colorer) Cyan() (string) {
+func (colorer *Colorer) Cyan() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[38;2;0;255;255m"
@@ -125,7 +125,7 @@ func (colorer *Colorer) Cyan() (string) {
 	}
 }
 
-func (colorer *Colorer) White() (string) {
+func (colorer *Colorer) White() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[38;2;255;255;255m"
@@ -137,7 +137,7 @@ func (colorer *Colorer) White() (string) {
 }
 
 // Bright Foreground Colors
-func (colorer *Colorer) BrightBlack() (string) {
+func (colorer *Colorer) BrightBlack() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[38;2;85;85;85m"
@@ -148,7 +148,7 @@ func (colorer *Colorer) BrightBlack() (string) {
 	}
 }
 
-func (colorer *Colorer) BrightRed() (string) {
+func (colorer *Colorer) BrightRed() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[38;2;255;85;85m"
@@ -159,7 +159,7 @@ func (colorer *Colorer) BrightRed() (string) {
 	}
 }
 
-func (colorer *Colorer) BrightGreen() (string) {
+func (colorer *Colorer) BrightGreen() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[38;2;85;255;85m"
@@ -170,7 +170,7 @@ func (colorer *Colorer) BrightGreen() (string) {
 	}
 }
 
-func (colorer *Colorer) BrightYellow() (string) {
+func (colorer *Colorer) BrightYellow() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[38;2;255;255;85m"
@@ -181,7 +181,7 @@ func (colorer *Colorer) BrightYellow() (string) {
 	}
 }
 
-func (colorer *Colorer) BrightBlue() (string) {
+func (colorer *Colorer) BrightBlue() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[38;2;85;85;255m"
@@ -192,7 +192,7 @@ func (colorer *Colorer) BrightBlue() (string) {
 	}
 }
 
-func (colorer *Colorer) BrightMagenta() (string) {
+func (colorer *Colorer) BrightMagenta() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[38;2;255;85;255m"
@@ -203,7 +203,7 @@ func (colorer *Colorer) BrightMagenta() (string) {
 	}
 }
 
-func (colorer *Colorer) BrightCyan() (string) {
+func (colorer *Colorer) BrightCyan() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[38;2;85;255;255m"
@@ -214,7 +214,7 @@ func (colorer *Colorer) BrightCyan() (string) {
 	}
 }
 
-func (colorer *Colorer) BrightWhite() (string) {
+func (colorer *Colorer) BrightWhite() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[38;2;240;240;240m"
@@ -226,7 +226,7 @@ func (colorer *Colorer) BrightWhite() (string) {
 }
 
 // Background Colors
-func (colorer *Colorer) BgBlack() (string) {
+func (colorer *Colorer) BgBlack() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[48;2;0;0;0m"
@@ -237,7 +237,7 @@ func (colorer *Colorer) BgBlack() (string) {
 	}
 }
 
-func (colorer *Colorer) BgRed() (string) {
+func (colorer *Colorer) BgRed() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[48;2;255;0;0m"
@@ -248,7 +248,7 @@ func (colorer *Colorer) BgRed() (string) {
 	}
 }
 
-func (colorer *Colorer) BgGreen() (string) {
+func (colorer *Colorer) BgGreen() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[48;2;0;255;0m"
@@ -259,7 +259,7 @@ func (colorer *Colorer) BgGreen() (string) {
 	}
 }
 
-func (colorer *Colorer) BgYellow() (string) {
+func (colorer *Colorer) BgYellow() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[48;2;255;255;0m"
@@ -270,7 +270,7 @@ func (colorer *Colorer) BgYellow() (string) {
 	}
 }
 
-func (colorer *Colorer) BgBlue() (string) {
+func (colorer *Colorer) BgBlue() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[48;2;0;0;255m"
@@ -281,7 +281,7 @@ func (colorer *Colorer) BgBlue() (string) {
 	}
 }
 
-func (colorer *Colorer) BgMagenta() (string) {
+func (colorer *Colorer) BgMagenta() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[48;2;255;0;255m"
@@ -292,7 +292,7 @@ func (colorer *Colorer) BgMagenta() (string) {
 	}
 }
 
-func (colorer *Colorer) BgCyan() (string) {
+func (colorer *Colorer) BgCyan() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[48;2;0;255;255m"
@@ -303,7 +303,7 @@ func (colorer *Colorer) BgCyan() (string) {
 	}
 }
 
-func (colorer *Colorer) BgWhite() (string) {
+func (colorer *Colorer) BgWhite() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[48;2;255;255;255m"
@@ -315,7 +315,7 @@ func (colorer *Colorer) BgWhite() (string) {
 }
 
 // Bright Background Colors
-func (colorer *Colorer) BrightBgBlack() (string) {
+func (colorer *Colorer) BrightBgBlack() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[48;2;85;85;85m"
@@ -326,7 +326,7 @@ func (colorer *Colorer) BrightBgBlack() (string) {
 	}
 }
 
-func (colorer *Colorer) BrightBgRed() (string) {
+func (colorer *Colorer) BrightBgRed() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[48;2;255;85;85m"
@@ -337,7 +337,7 @@ func (colorer *Colorer) BrightBgRed() (string) {
 	}
 }
 
-func (colorer *Colorer) BrightBgGreen() (string) {
+func (colorer *Colorer) BrightBgGreen() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[48;2;85;255;85m"
@@ -348,7 +348,7 @@ func (colorer *Colorer) BrightBgGreen() (string) {
 	}
 }
 
-func (colorer *Colorer) BrightBgYellow() (string) {
+func (colorer *Colorer) BrightBgYellow() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[48;2;255;255;85m"
@@ -359,7 +359,7 @@ func (colorer *Colorer) BrightBgYellow() (string) {
 	}
 }
 
-func (colorer *Colorer) BrightBgBlue() (string) {
+func (colorer *Colorer) BrightBgBlue() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[48;2;85;85;255m"
@@ -370,7 +370,7 @@ func (colorer *Colorer) BrightBgBlue() (string) {
 	}
 }
 
-func (colorer *Colorer) BrightBgMagenta() (string) {
+func (colorer *Colorer) BrightBgMagenta() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[48;2;255;85;255m"
@@ -381,7 +381,7 @@ func (colorer *Colorer) BrightBgMagenta() (string) {
 	}
 }
 
-func (colorer *Colorer) BrightBgCyan() (string) {
+func (colorer *Colorer) BrightBgCyan() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[48;2;85;255;255m"
@@ -392,7 +392,7 @@ func (colorer *Colorer) BrightBgCyan() (string) {
 	}
 }
 
-func (colorer *Colorer) BrightBgWhite() (string) {
+func (colorer *Colorer) BrightBgWhite() string {
 	switch colorer.ColorMode {
 	case "truecolor":
 		return "\033[48;2;240;240;240m"

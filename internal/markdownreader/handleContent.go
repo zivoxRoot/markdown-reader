@@ -85,7 +85,7 @@ func handleContent(line string) string {
 				continue
 			}
 
-			word = colorer.Strikethrough() +word
+			word = colorer.Strikethrough() + word
 			returnSlice = append(returnSlice, word)
 			continue
 		}
