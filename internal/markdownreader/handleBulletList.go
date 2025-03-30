@@ -17,6 +17,6 @@ func handleBulletList(line string) string {
 		returnLine = strings.TrimPrefix(line, "*")
 	}
 
-	returnLine = "•" + returnLine
+	returnLine = colors.Reset() + "•" + returnLine
 	return returnLine
 }

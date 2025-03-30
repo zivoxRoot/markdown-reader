@@ -1,5 +1,5 @@
 package markdownreader
 
 func handleCodeBlock() string {
-	return "" + colors.Dim()
+	return colors.Reset() + "" + colors.Dim()
 }

@@ -8,5 +8,5 @@ func handleQuotes(line string) string {
 	var returnLine string
 
 	returnLine = strings.TrimPrefix(line, "> ")
-	return colors.Dim() + "│ " + returnLine + colors.Reset()
+	return colors.Reset() + colors.Dim() + "│ " + returnLine + colors.Reset()
 }
