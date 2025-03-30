@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// handleNumberedList colors a numbered list element.
 func handleNumberedList(line string) string {
 	line = strings.TrimPrefix(line, " ")
 	words := strings.Split(line, " ")

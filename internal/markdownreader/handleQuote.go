@@ -4,6 +4,7 @@ import (
 	"strings"
 )
 
+// handleQuotes remove the markdown syntax character and style the quote.
 func handleQuotes(line string) string {
 	var returnLine string
 

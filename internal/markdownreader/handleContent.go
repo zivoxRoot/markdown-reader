@@ -4,6 +4,7 @@ import (
 	"strings"
 )
 
+// checkWordStart remove a markdown format sign at the beginning of a word and style it.
 func checkWordStart(word string, specialChar string, style string, background string) string {
 
 	word = strings.TrimPrefix(word, specialChar)
@@ -16,7 +17,7 @@ func checkWordStart(word string, specialChar string, style string, background st
 		if background != "" {
 			word = background + " " + style + word + " " + colors.Reset()
 			return word
-		} 
+		}
 
 		word = style + word + colors.Reset()
 		return word
@@ -31,6 +32,7 @@ func checkWordStart(word string, specialChar string, style string, background st
 	return word
 }
 
+// checkWordEnd removes a markdown format sign at the end of a word and style it.
 func checkWordEnd(word string, specialChar string, hasBackground bool) string {
 
 	word = strings.TrimSuffix(word, specialChar)
@@ -42,6 +44,7 @@ func checkWordEnd(word string, specialChar string, hasBackground bool) string {
 	return word + colors.Reset()
 }
 
+// handleLine loops through the words of a line, checks if they have markdown format sign, then style them.
 func handleLine(line string) string {
 	line = strings.TrimPrefix(line, " ")
 	words := strings.Split(line, " ")

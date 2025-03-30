@@ -4,6 +4,7 @@ import (
 	"strings"
 )
 
+// handleBulletList removes the '-', '+', or '*' and output a stylized bullet point.
 func handleBulletList(line string) string {
 	var returnLine string
 

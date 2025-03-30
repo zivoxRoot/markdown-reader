@@ -4,6 +4,7 @@ import (
 	"strings"
 )
 
+// handlePrefix check the first characters of a line to see if it is a special markdown element.
 func handlePrefix(line string) string {
 
 	// Big title

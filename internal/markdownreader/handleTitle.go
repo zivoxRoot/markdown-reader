@@ -4,6 +4,7 @@ import (
 	"strings"
 )
 
+// handleBigTitle styles markdown titles with one '#'.
 func handleBigTitle(line string) string {
 	var returnLine string
 
@@ -12,6 +13,7 @@ func handleBigTitle(line string) string {
 	return returnLine
 }
 
+// handleTitle styles markdown titles that start with multiple '#'.
 func handleTitle(line string) string {
 	var returnLine string
 

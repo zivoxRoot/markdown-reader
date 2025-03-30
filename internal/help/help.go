@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+// ShowHelp shows the default help message
 func ShowHelp() {
 	ShowVersion()
 	fmt.Println("https://github.com/zivoxRoot/markdown-reader")
@@ -18,6 +19,7 @@ func ShowHelp() {
 	fmt.Println("  -v, --version             show the version of markdown-reader")
 }
 
+// ShowVersion shows the current markdown-reader's version
 func ShowVersion() {
 	fmt.Println("markdown reader 0.0.0")
 }
