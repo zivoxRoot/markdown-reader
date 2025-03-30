@@ -7,10 +7,10 @@ APP_NAME="md"
 INSTALL_DIR="/usr/local/bin"
 GITHUB_REPO="zivoxRoot/markdown-reader"
 LATEST_RELEASE="0.0.0"
-DOWNLOAD_URL="https://github.com/$GITHUB_REPO/releases/download/$LATEST_RELEASE/$APP_NAME"
+DOWNLOAD_URL="https://github.com/$GITHUB_REPO/raw/refs/heads/main/bin/linux/md"
 
 # Download and install the executable
-echo "Downloading $APP_NAME..."
+echo "Downloading $APP_NAME and copying it to $DOWNLOAD_URL..."
 sudo curl -L -o "$INSTALL_DIR/$APP_NAME" "$DOWNLOAD_URL"
 
 # Set permissions
