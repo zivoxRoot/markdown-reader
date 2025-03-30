@@ -36,5 +36,11 @@ func handlePrefix(line string) string {
 		return returnLine
 	}
 
+	// Code block
+	if strings.HasPrefix(line, "```") {
+		returnLine := handleCodeBlock()
+		return returnLine
+	}
+
 	return line
 }
