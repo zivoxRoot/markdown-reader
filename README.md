@@ -7,7 +7,8 @@ A markdown reader that output stylized markdown in your terminal !
 - Automatic color support for 16 colors, 256 colors, and truecoor
 - Support titles to level 6
 - Bullet list and numbered list
-- Quotes
+- Quote
+- Code block
 - Bold, italic, strikethrough, and inline code
 
 ## Usage
