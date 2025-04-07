@@ -30,6 +30,7 @@ curl -L https://raw.githubusercontent.com/zivoxRoot/markdown-reader/refs/heads/m
 2. Install markdown-reader with go
 
 ```bash
+
 ```
 
 3. Build it from source, you can either take the latest release or the unstable development version
