@@ -2,7 +2,7 @@ package markdownreader
 
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
 	"strings"
 
 	"github.com/zivoxRoot/markdown-reader/internal/colorer"
@@ -35,7 +35,7 @@ func (reader *Reader) ProcessMarkdown() ([]string, error) {
 	}
 
 	// Read the file
-	content, err := ioutil.ReadFile(reader.File)
+	content, err := os.ReadFile(reader.File)
 	if err != nil {
 		return nil, err
 	}
