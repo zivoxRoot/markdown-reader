@@ -27,17 +27,17 @@ func main() {
 
 	file := args[1]
 
-	// Initialize a new markdown reader instance
+	// Initialize a new markdown reader instance.
 	reader := markdownreader.NewReader(file)
 	result, err := reader.ProcessMarkdown()
 
-	// Check for errors
+	// Check for errors.
 	if err != nil {
 		fmt.Println("Markdown reader :", err)
 		os.Exit(1)
 	}
 
-	// Print the stylized markdown
+	// Print the stylized markdown.
 	for _, line := range result {
 		fmt.Println("  " + line)
 	}

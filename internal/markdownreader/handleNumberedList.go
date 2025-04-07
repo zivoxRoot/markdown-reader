@@ -12,11 +12,11 @@ func handleNumberedList(line string) string {
 	firstWord := words[0]
 	restOfLine := strings.TrimPrefix(line, firstWord)
 
-	// Check if the fist word ends with a dot
+	// Check if the fist word ends with a dot.
 	if strings.HasSuffix(firstWord, ".") {
 		cleanFirstWord := strings.TrimSuffix(firstWord, ".")
 
-		// Check if the first word is a number
+		// Check if the first word is a number.
 		if _, err := strconv.Atoi(cleanFirstWord); err != nil {
 			return line
 		}

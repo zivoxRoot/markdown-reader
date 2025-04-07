@@ -43,5 +43,11 @@ func handlePrefix(line string) string {
 		return returnLine
 	}
 
+	// Horizontal lines
+	if strings.HasPrefix(line, "---") {
+		returnLine := handleHorizontalLine()
+		return returnLine
+	}
+
 	return line
 }
